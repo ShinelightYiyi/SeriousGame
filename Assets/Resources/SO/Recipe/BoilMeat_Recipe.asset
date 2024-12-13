@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a611c24fa6d2d2e479f85ddf0c487a86, type: 3}
+  m_Name: BoilMeat_Recipe
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 4d32fbcc362b98c47984fbe055472552, type: 2}
+  - {fileID: 11400000, guid: abd2d693a05b1c14189390ddaca4b590, type: 2}
+  - {fileID: 11400000, guid: b43c514f3d395874e9655d5d358ae5c4, type: 2}
+  - {fileID: 11400000, guid: 0b13dabea7004274d813a775eb3e492c, type: 2}
+  result: {fileID: 11400000, guid: 32db7f557e9f61c49990de3f6895cd21, type: 2}
