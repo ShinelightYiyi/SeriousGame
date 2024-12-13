@@ -53,6 +53,7 @@ public class DataManager : MonoBehaviour
     }
     IEnumerator SetEndUI()
     {
+        GameManager.Instance.Earn += (Earn - Cost - RegularCost);
         endPanel.SetActive(true);
         yield return new WaitForSeconds(1f);
 
