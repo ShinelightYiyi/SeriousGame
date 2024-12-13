@@ -6,8 +6,9 @@ public class FoodMouseClick : IPoint
 {
     RectTransform canvasRectTransform;
     RectTransform rectTransform;
-    public ProcessingObject inAreaObject;
-
+    public ProcessingObject inAreaProcessing;
+    public CuttingObject inAreaCutting;
+    public DeliverDish inAreaDeliver;
     bool onDrag = false;
     void Start()
     {
@@ -46,9 +47,13 @@ public class FoodMouseClick : IPoint
     {
         if(onDrag)
         {
+            inAreaCutting = null;
+            inAreaProcessing = null;
+            inAreaDeliver = null;
             onDrag = false;
             MouseMoveManager.Instance.HandleingObject = false;
             GameObject[] allUIObjects = GameObject.FindGameObjectsWithTag("Processing");
+            
             foreach(var uiObject in allUIObjects)
             {
                 if (uiObject == gameObject)
@@ -56,17 +61,30 @@ public class FoodMouseClick : IPoint
                 RectTransform otherRectTransform = uiObject.GetComponent<RectTransform>();
                 if (otherRectTransform != null && IsRectOverlap(rectTransform, otherRectTransform))
                 {
-                    uiObject.TryGetComponent(out inAreaObject);
+                    
+                    uiObject.TryGetComponent(out inAreaProcessing);
+                    uiObject.TryGetComponent(out inAreaCutting);
+                    uiObject.TryGetComponent(out inAreaDeliver);
                 }
             }
-            if(inAreaObject)
+            if(inAreaProcessing && !inAreaProcessing.OnProcessing)
             {
-                if(inAreaObject.checkPosibleRecipe(GetComponent<FoodBasic>().food_SO))
+                if(inAreaProcessing.checkPosibleRecipe(GetComponent<FoodBasic>().food_SO))
                 {
-                    inAreaObject.foodContains.Add(GetComponent<FoodBasic>().food_SO);
-                    inAreaObject.GenerateNewFoodTip(GetComponent<FoodBasic>().food_SO);
+                    inAreaProcessing.foodContains.Add(GetComponent<FoodBasic>().food_SO);
+                    inAreaProcessing.GenerateNewFoodTip(GetComponent<FoodBasic>().food_SO);
+                  
                     Destroy(gameObject);
                 }
+            }
+            else if (inAreaCutting && !inAreaCutting.OnCutting && GetComponent<FoodBasic>().food_SO.cutTrans != null)
+            {
+                inAreaCutting.FoodContain = GetComponent<FoodBasic>().food_SO;
+                Destroy(gameObject);
+            }
+            else if (inAreaDeliver && inAreaDeliver.checkDishDeliver(GetComponent<FoodBasic>().food_SO))
+            {
+                Destroy(gameObject);
             }
         }
     }
@@ -84,9 +102,17 @@ public class FoodMouseClick : IPoint
         Vector3[] worldCorners = new Vector3[4];
         rectTransform.GetWorldCorners(worldCorners);
 
-        // 使用四个角的世界坐标来创建一个矩形
+        // 获取原始矩形的最小和最大坐标
         Vector2 min = worldCorners[0];
         Vector2 max = worldCorners[2];
-        return new Rect(min, max - min);
+        // 计算矩形中心
+        Vector2 center = (min + max) / 2;
+
+        // 将矩形的每条边缩小至原先的一半
+        Vector2 newMin = center + (min - center) / 2;
+        Vector2 newMax = center + (max - center) / 2;
+
+        return new Rect(newMin, newMax - newMin);
     }
+
 }

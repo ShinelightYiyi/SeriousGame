@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587df7b5af90b843b38125550c4be2c, type: 3}
   m_Name: Chicken_Cut
   m_EditorClassIdentifier: 
-  foodName: Chicken
+  foodName: "\u9E21\u4E01"
   cutTrans: {fileID: 0}
   bollTrans: {fileID: 0}
   fryTrans: {fileID: 0}

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class ProcessingObject : IPoint
 {
@@ -12,13 +13,14 @@ public class ProcessingObject : IPoint
     public float shakeStrength = 1f; 
     public int shakeFrequency = 10;
     [Header("其他")]
-    RectTransform rectTransform;
     public Recipe_SO[] recipes;
     public List<FoodBase_SO> foodContains;
     public Recipe_SO onProcessingRecipe = null;
     public float processingTime;
     private bool onProcessing;
     Tween shakeTween;
+    Canvas canvas;
+
     public bool OnProcessing
     {
         get { return onProcessing; }
@@ -32,33 +34,32 @@ public class ProcessingObject : IPoint
             else
             {
                 shakeTween.Pause();
+                transform.DORotate(new Vector3(0, 0, 0), 0.5f);
             }
         }
     }
     void Start()
     {
+        canvas = GetComponentInParent<Canvas>();
         shakeTween = GetComponent<RectTransform>().DORotate(new Vector3(0, 0, shakeStrength), shakeDuration, RotateMode.FastBeyond360)
             .SetLoops(-1, LoopType.Yoyo)  // 设置无限循环并反向播放
             .Pause();
-    }
-    void Update()
-    {
-        
     }
     public Recipe_SO checkPosibleRecipe()
     {
         foreach (var recipe in recipes)
         {
             bool posibleRecipe = true;
-            foreach(var food in foodContains)
+            
+            foreach (var food in recipe.ingredients)
             {
-                if(!recipe.ingredients.Contains(food))
+                if (!foodContains.Contains(food))
                 {
                     posibleRecipe = false;
                     break;
                 }
             }
-            if(posibleRecipe)
+            if (posibleRecipe)
             {
                 return recipe;
             }
@@ -69,17 +70,14 @@ public class ProcessingObject : IPoint
     {
         if(onProcessingRecipe = checkPosibleRecipe())
         {
-            Debug.Log(2);
             ClearTips();
             OnProcessing = true;
             GenerateNewFoodTip(onProcessingRecipe.result);
-            Debug.Log(3);
             StartCoroutine(Processing());
         }
     }
     public override void PointClick()
     {
-        Debug.Log(1);
         TryProcessing();
     }
     public Recipe_SO checkPosibleRecipe(FoodBase_SO curFood)
@@ -118,7 +116,7 @@ public class ProcessingObject : IPoint
     }
     IEnumerator Processing()
     {
-        Debug.Log(4);
+        foodContains.Clear();
         float Timer = 0;
         while (Timer < processingTime)
         {
@@ -126,6 +124,16 @@ public class ProcessingObject : IPoint
             yield return new WaitForSeconds(Time.deltaTime);
         }
         OnProcessing = false;
+        GenerateResult();
+        onProcessingRecipe = null;
         ClearTips();
+    }
+    void GenerateResult()
+    {
+        GameObject newFood = Instantiate(Resources.Load<GameObject>("Prefab/FoodBasicPrefab"));
+        newFood.GetComponent<FoodBasic>().food_SO = onProcessingRecipe.result;
+        newFood.transform.SetParent(canvas.transform);
+        newFood.transform.position = transform.position + new Vector3( 0, -1, 0);
+        newFood.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
     }
 }

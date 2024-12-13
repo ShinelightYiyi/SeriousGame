@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587df7b5af90b843b38125550c4be2c, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
-  foodName: Potato
+  foodName: "\u571F\u8C46"
   cutTrans: {fileID: 11400000, guid: 8b8a85425a0df75438f2d619a268b37d, type: 2}
   bollTrans: {fileID: 0}
   fryTrans: {fileID: 0}

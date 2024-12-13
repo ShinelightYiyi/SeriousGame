@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587df7b5af90b843b38125550c4be2c, type: 3}
   m_Name: ChiliMeat
   m_EditorClassIdentifier: 
-  foodName: ChiliMeat
+  foodName: "\u8FA3\u6912\u7092\u8089"
   cutTrans: {fileID: 0}
   bollTrans: {fileID: 0}
   fryTrans: {fileID: 0}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c2c316fec1a45d34b9675bbb009996de, type: 3}
   cost: 0
   price: 45
