@@ -10,21 +10,14 @@ public class DialogueTest : MonoBehaviour
     private void Start()
     {
         treeController = GetComponent<DialogueTreeController>();
+        treeController.StartDialogue();
     }
 
 
     private void Update()
     {
-        StartTalk();
     }
 
 
-    private void StartTalk()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && isOnce)
-        {
-            isOnce = false;
-            treeController.StartDialogue();
-        }
-    }
+
 }
