@@ -16,6 +16,7 @@ public class SceneController
     }
     public void LoadSceneAsyn(string scene)
     {
+        UIManager.Instance.Push(new PassPanel(), false);
        MonoManager.Instance.StartCroutine(ReallyLoadSceneAsyn(scene));
     }
     private IEnumerator ReallyLoadSceneAsyn(string scene)

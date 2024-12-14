@@ -6,9 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMnue.unity
+    guid: 6a414d5012fb5ae44ad0ce079fe2c020
   - enabled: 1
-    path: Assets/Scenes/Test/Scene01.unity
-    guid: 49c45cb6e24cba548b9cc3161a58941e
+    path: Assets/Scenes/Food/FoodA.unity
+    guid: 40efbd3a4f6a1bc4f845ce34652e5b95
+  - enabled: 1
+    path: Assets/Scenes/Food/FoodB.unity
+    guid: f9540cb9e90cc6d4ea0345b395aa55b6
+  - enabled: 1
+    path: Assets/Scenes/Food/FoodC.unity
+    guid: 8608fd1da8dc7c041b278edde2bc3443
+  - enabled: 1
+    path: Assets/Scenes/Food/FoodD.unity
+    guid: acf4317d4ef8c99499b2dd891e968f66
+  - enabled: 1
+    path: Assets/Scenes/Test/Talk/BadEnd.unity
+    guid: 193716bec6524424cb7586a065f8d25e
+  - enabled: 1
+    path: Assets/Scenes/Test/Talk/EventScene1.unity
+    guid: d5bf71f278c5d5647b323a7cc778b2a6
+  - enabled: 1
+    path: Assets/Scenes/Test/Talk/EventScene2.unity
+    guid: 782cd02329eaa654ba6e688cb70f9c0f
+  - enabled: 1
+    path: Assets/Scenes/Test/Talk/EventScene3.unity
+    guid: 51a40ca659a5e3f42b2d6ae47d00db86
   m_configObjects: {}

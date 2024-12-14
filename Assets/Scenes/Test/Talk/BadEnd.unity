@@ -123,6 +123,107 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &37391208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37391212}
+  - component: {fileID: 37391211}
+  - component: {fileID: 37391210}
+  - component: {fileID: 37391209}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: NormalCanvas
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &37391209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37391208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &37391210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37391208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &37391211
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37391208}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &37391212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37391208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &367573656
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"\u968f\u7740\u4e00\u5929\u4e00\u5929\u7684\u7ecf\u8425\uff0c\u4f60\u7684\u5e97\u94fa\u7684\u91d1\u94b1\u8d8a\u6765\u8d8a\u5c11"},"_actorName":"\u65c1\u767d","_actorParameterID":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_position":{"x":-176.9918,"y":-33.83829},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_actorName":"\u5e97\u4e3b","_actorParameterID":"e2224abd-443b-4707-b8b9-4e568fcdc662","_position":{"x":-58.34137,"y":153.7202},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"},{"statement":{"_text":"\u5509\uff0c\u6700\u7ec8\u8fd8\u662f\u505a\u4e0d\u4e0b\u53bb\u4e86\uff0c\u7b97\u4e86\u5427\uff0c\u4e0b\u6b21\u8981\u4e0d\u8981\u8003\u8651\u8d2d\u4e70\u9884\u5236\u83dc\u964d\u4f4e\u6210\u672c"},"_actorName":"\u5e97\u4e3b","_actorParameterID":"e2224abd-443b-4707-b8b9-4e568fcdc662","_position":{"x":-175.3333,"y":320.3334},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"End"},"_actorName":"\u65c1\u767d","_actorParameterID":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_position":{"x":16.50659,"y":450.4926},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_position":{"x":97.32019,"y":600.7714},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"4"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"\u5e97\u4e3b","_id":"e2224abd-443b-4707-b8b9-4e568fcdc662","_actorObject":2},{"_keyName":"\u65c1\u767d","_id":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_actorObject":3}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"\u968f\u7740\u4e00\u5929\u4e00\u5929\u7684\u7ecf\u8425\uff0c\u4f60\u7684\u5e97\u94fa\u7684\u91d1\u94b1\u8d8a\u6765\u8d8a\u5c11"},"_actorName":"\u65c1\u767d","_actorParameterID":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_position":{"x":-176.9918,"y":-33.83829},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"_action":{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":1},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},"_actorName":"\u5e97\u4e3b","_actorParameterID":"e2224abd-443b-4707-b8b9-4e568fcdc662","_position":{"x":-58.34137,"y":153.7202},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"1"},{"statement":{"_text":"\u5509\uff0c\u6700\u7ec8\u8fd8\u662f\u505a\u4e0d\u4e0b\u53bb\u4e86\uff0c\u7b97\u4e86\u5427\uff0c\u4e0b\u6b21\u8981\u4e0d\u8981\u8003\u8651\u8d2d\u4e70\u9884\u5236\u83dc\u964d\u4f4e\u6210\u672c"},"_actorName":"\u5e97\u4e3b","_actorParameterID":"e2224abd-443b-4707-b8b9-4e568fcdc662","_position":{"x":-175.3333,"y":320.3334},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"End"},"_actorName":"\u65c1\u767d","_actorParameterID":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_position":{"x":16.50659,"y":450.4926},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_action":{"sceneName":"MainMnue","$type":"ChangeSceneEvent"},"_position":{"x":296.6275,"y":451.8087},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":97.32019,"y":600.7714},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[{"_keyName":"\u5e97\u4e3b","_id":"e2224abd-443b-4707-b8b9-4e568fcdc662","_actorObject":2},{"_keyName":"\u65c1\u767d","_id":"19c77dfc-2283-44f2-8d76-e3a5ab99127e","_actorObject":3}],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1384623774}
@@ -437,8 +538,8 @@ MonoBehaviour:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 747, y: -28}
-    _zoomFactor: 0.9693093
+    _translation: {x: 737.9028, y: -42.018757}
+    _zoomFactor: 1
   _firstActivation: 1
   _enableAction: 1
   _disableAction: 2
@@ -1052,3 +1153,4 @@ SceneRoots:
   - {fileID: 367573660}
   - {fileID: 1802719067}
   - {fileID: 1114700348}
+  - {fileID: 37391212}

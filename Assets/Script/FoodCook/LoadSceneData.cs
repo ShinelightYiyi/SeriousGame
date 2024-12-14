@@ -8,7 +8,6 @@ public class LoadSceneData : MonoBehaviour
     public string badEnding;
     public void NextDay()
     {
-        if(GameManager.Instance.closeDown == 0) SceneController.Instance.LoadSceneAsyn(nextLevel);
-        else SceneController.Instance.LoadSceneAsyn(badEnding);
+        SceneController.Instance.LoadSceneAsyn(nextLevel);
     }
 }
